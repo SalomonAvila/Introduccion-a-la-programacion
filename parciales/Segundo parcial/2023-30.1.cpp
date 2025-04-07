@@ -2,26 +2,21 @@
 
 using namespace std;
 
-void cuantas(int malteadas[], int longitud) {
-    int cantidad_maxima = longitud/2;
+void cantidadDeMalteadas(int malteadas[], int cantidad){
+    
+    int maximo = cantidad /= 2;
+    int malteadaAnterior = 0;
     int contador = 0;
-    int anterior = -1;
-    for(int i = 0; i<longitud; i++){
-        if( (malteadas[i] != anterior) && (contador<cantidad_maxima)){
+    for(int i = 0; i<cantidad; i++){
+        if(malteadas[i] != malteadaAnterior){
+            malteadaAnterior = malteadas[i];
             contador++;
-            anterior = malteadas[i];
         }
+        if(contador == maximo){
+            cout<<contador;
+            return;
+        }
+        
     }
-    cout<<contador<<endl;
-}
-
-int main() {
-	int lon;
-	cin>>lon;
-	int malteadas[lon];
-	for(int i = 0; i<lon; i++) {
-		cin>>malteadas[i];
-	}
-	cuantas(malteadas,lon);
-
+    
 }
