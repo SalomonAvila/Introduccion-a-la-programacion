@@ -20,7 +20,7 @@ double cambiarMatriz(char matriz[][9], int filas, int columnas, char colorOrigen
             }
         }
     }
-    double porcentaje = 100-(100*cambios)/total;
+    double porcentaje = (cambios/total)*100;
 }
 
 void copistas(char matriz[][9], int filas, int columnas, int cantidadCopistas, Copista copistas[]){
